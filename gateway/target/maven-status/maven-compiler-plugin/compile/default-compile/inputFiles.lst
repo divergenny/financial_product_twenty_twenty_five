@@ -1,7 +1,0 @@
-C:\JavaProjects\financial_product_twenty_twenty_five\gateway\src\main\java\uz\divergenny\gateway\confiig\AppConfig.java
-C:\JavaProjects\financial_product_twenty_twenty_five\gateway\src\main\java\uz\divergenny\gateway\exceptions\GlobalErrorHandler.java
-C:\JavaProjects\financial_product_twenty_twenty_five\gateway\src\main\java\uz\divergenny\gateway\filter\AdminFilter.java
-C:\JavaProjects\financial_product_twenty_twenty_five\gateway\src\main\java\uz\divergenny\gateway\filter\AuthenticationFilter.java
-C:\JavaProjects\financial_product_twenty_twenty_five\gateway\src\main\java\uz\divergenny\gateway\filter\RouteValidator.java
-C:\JavaProjects\financial_product_twenty_twenty_five\gateway\src\main\java\uz\divergenny\gateway\GatewayApplication.java
-C:\JavaProjects\financial_product_twenty_twenty_five\gateway\src\main\java\uz\divergenny\gateway\util\JwtUtil.java

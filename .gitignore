@@ -25,4 +25,14 @@ replay_pid*
 *.iml
 target
 .idea
+target/
+**/target/
 
+# IntelliJ IDEA
+.idea/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+build/
+**/build/
