@@ -1,0 +1,70 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  fin-service:
+    build:
+      context: ./fin-service
+      dockerfile: Dockerfile
+    container_name: fin-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTS=-Xmx5120m -Xms256m -Xss256k
+    restart: always
+
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    container_name: gateway
+    ports:
+      - "8082:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTS=-Xmx5120m -Xms256m -Xss256k
+    restart: always
+
+  eureka:
+    build:
+      context: ./eureka
+      dockerfile: Dockerfile
+    container_name: eureka-server
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTS=-Xmx5120m -Xms256m -Xss256k
+    restart: always
+
+  config:
+    build:
+      context: ./config
+      dockerfile: Dockerfile
+    container_name: config-server
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTS=-Xmx5120m -Xms256m -Xss256k
+    restart: always
+
+  auth-service:
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile
+    container_name: auth-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTS=-Xmx5120m -Xms256m -Xss256k
+    restart: always
+
+
+volumes:
+  postgres-data:
+  app-data:
